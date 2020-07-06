@@ -1507,8 +1507,12 @@ position: absolute;
     .application form .input-wrap .dmy select {
         width: 90px;
     }
+    .application form .input-wrap .col-sm-4{
+        justify-content: flex-start;
+    }
     .application form .input-wrap .haveTo {
-        margin-right: 0px;
+        margin-left: 10px;
+        margin-right: 0;
     }
 
 }
