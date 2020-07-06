@@ -396,10 +396,10 @@
                 お問い合わせをする場合は、「お名前」「メールアドレス」「備考・ご質問等」を
                 ご記入してお問い合わせ下さい。
             </h5>
-            <form action="">
+            <form action="" id="applyForm">
                 <div class="input-wrap row">
                     <div class="col-sm-4 col-12"><label for="name">お名前</label> <small class="haveTo">必須</small></div>
-                    <div class="col-sm-8 col-12"><input type="text" id="name" required></div>
+                    <div class="col-sm-8 col-12"><input type="text" id="name" name="name" required></div>
                 </div>
                 <div class="input-wrap row">
                     <div class="col-sm-4 col-12">
@@ -436,7 +436,7 @@
                 </div>
                 <div class="input-wrap row">
                     <div class="col-sm-4 col-12"><label for="email">メールアドレス</label> <small class="haveTo">必須</small></div>
-                    <div class="col-sm-8 col-12"><input type="email" id="email" required></div>
+                    <div class="col-sm-8 col-12"><input type="email" id="email" name="email" required></div>
                 </div>
                 <div class="input-wrap row">
                     <div class="col-sm-4 col-12"><label for="interviewDate">ご希望の面接日</label></div>
@@ -468,7 +468,9 @@
                 </div>
                 <div class="input-wrap row">
                     <div class="col-sm-4 col-12"><label for="file">身分証明書</label></div>
-                    <div class="col-sm-8 col-12 file-input"> <label for="file">ファイルを選択</label><input type="file" id="file" required>
+                    <div class="col-sm-8 col-12 file-input"> 
+                       <label for="file" class="flabel">ファイルを選択</label>
+                       <input type="file" id="file" name="file" accept="text/plain" required>
                         <p>選択されていません</p>
                     </div>
                 </div>
@@ -506,6 +508,7 @@
     </a>
     <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-datepicker.min.js"></script>
 
     <script>
@@ -556,16 +559,49 @@
             });
 
             var scrollLink = $('a.nav-link');
-            scrollLink.on("click",function(e){
+            scrollLink.on("click", function(e) {
                 e.preventDefault();
                 $('body,html').animate({
                     scrollTop: $(this.hash).offset().top - 40
                 }, 1200);
             });
+            $('.applicationForm').submit(function() {
+                e.preventDefault();
+                if ($("#name").val() == '') {
+                    alert('ok');
+                }
+            })
+
+            $("#applyForm").validate({
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    file: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "氏名を入力してください。"
+                    },
+                    email: {
+                        required: "メールアドレスを入力してください。",
+                        email: "メールアドレスの形式で入力してください。"
+                    },
+                    file: {
+                        required: "問い合わせ内容を入力してください。"
+                    }
+                }
+            });
 
         });
-
+        
+        
+        
     </script>
-</body>
-
-</html>
+</body></html>

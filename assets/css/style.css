@@ -1372,10 +1372,11 @@ header .nav-item .nav-link:hover {
 }
 
 .application .file-input input {
-    display: none;
+position: absolute;
+    visibility: hidden;
 }
 
-.application .file-input label {
+.application .file-input .flabel {
     padding: 10px 30px;
     border-radius: 40px;
     background: #8D6827;
@@ -1470,7 +1471,7 @@ header .nav-item .nav-link:hover {
         margin-top: -10px;
     }
 
-    .application .file-input label {
+    .application .file-input .flabel {
         padding: 10px 20px;
         margin-right: 20px;
     }
@@ -1511,7 +1512,14 @@ header .nav-item .nav-link:hover {
     }
 
 }
-
+label.error{
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    top: 100%;
+    margin: 0;
+    color: #EA4545;
+}
 
 footer {
     padding: 40px 20px;
