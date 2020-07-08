@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/* TITLE */
+#request .sec-title {
+  width: 100%;
+  margin: 50px auto 25px;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title {
+    margin: 15px auto 0;
+  }
+}
+#request .sec-title .inner {
+  max-width: 960px;
+  margin: auto;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title .inner {
+    max-width: 100%;
+    padding:0 5%;
+  }
+}
+#request .sec-title .inner .title {
+  font-size: 36px;
+  color: #333;
+  line-height: 1;
+  letter-spacing: 0.075em;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title .inner .title {
+    font-size: 21px;
+  }
+}
+#request .sec-title .inner .finish {
+  margin:45px auto 120px;
+  font-size: 28px;
+  color: #333;
+  line-height: 1;
+  letter-spacing: 0.075em;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title .inner .finish {
+    margin:25px auto 80px;
+    font-size: 18px;
+  }
+}
+#request .sec-title .inner .text {
+  width:700px;
+  margin: 25px auto 0;
+  font-size: 16px;
+  text-align:left;
+  line-height:1.5;
+  letter-spacing: 0.125em;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title .inner .text {
+    width:100%;
+    margin: 10px auto 0;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+#request .sec-title .inner .text span {
+  color:#f00;
+}
+@media only screen and (max-width: 767px) {
+  #request .sec-title .inner .text span {
+    color:#f00;
+  }
+}
+
+
+#request .sec-form{
+	margin:0 auto 80px ;
+}
+
+
+#formWrap {
+	width:700px;
+	margin:0 auto 50px;
+	color:#333;
+	line-height:1.5;
+	font-size:16px;
+}
+
+#formWrap p,
+#formWrap table{
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="submit"],
+input[type="reset"],
+textarea,
+select {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding:5px 10px;
+  font-size: 1rem;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+  width:250px;
+	border:0;
+  border-radius: 7px;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 1.25rem;
+  letter-spacing:0.05em;
+  transition: 0.5s;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #ff9e1c, #ff7e00);
+}
+
+input[type="button"]{
+  padding: 10px 30px;
+	margin-bottom: 50px;
+}
+input[type="submit"] {
+  padding: 10px 30px;
+  margin-bottom: 50px;
+}
+input[type="submit"]:hover {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+input[type="reset"] {
+  color: #999;
+  padding: 5px 10px; }
+input[type="text"],
+input[type="email"],
+input[type="tel"]{
+	width: 70%;}
+input.short {
+  box-sizing: border-box;
+  width: 30%;
+}
+input.x-short {
+  box-sizing: border-box;
+  width: 6em;
+}
+input.numbers {
+  text-align: right;
+}
+@media only screen and (max-width: 767px) {
+  input[type="text"].x-short {
+    width: 6em;
+    display: inline;
+  }
+}
+
+
+input.long {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+::placeholder {
+  color: #999;
+}
+
+input,
+textarea,
+select {
+  padding: 8px;
+  line-height: 1.7;
+}
+label{
+  line-height: 2;
+}
+table.formTable{
+	width:100%;
+	margin:0 auto;
+	border-collapse:collapse;
+}
+table.formTable td,
+table.formTable th{
+	border:1px solid #ccc;
+	padding:10px;
+}
+table.formTable th{
+	width:30%;
+	font-weight:normal;
+	background:#fff2e3;
+	text-align:left;
+	vertical-align: middle;
+}
+table.formTable td{
+  overflow: hidden;
+}
+table.formTable td p.gakka{
+}
+
+table.formTable label.hf{
+  width:50%;
+  float: left;
+  text-align: center;
+}
+table.formTable label.hf img{
+  border:1px solid #ccc;
+}
+
+table.formTable .leaflet{
+  display:flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+table.formTable .leaflet p{
+  margin-left:50px;
+}
+
+table.formTable td p.school-now{
+  margin:0.5em 0 0 0;
+  padding-left:2em;
+}
+table.formTable td p.school-graduation{
+  margin:0.5em 0 0 0;
+  padding-left:1em;
+}
+
+
+@media only screen and (max-width: 767px) {
+  table.formTable td p.gakka{
+    letter-spacing:-0.05em;
+  }
+  table.formTable .leaflet{
+    justify-content:space-between;
+  }
+  table.formTable .leaflet p{
+    margin-left:0;
+  }
+  table.formTable td p.school-now{
+    margin:0.5em 0 0 0;
+    padding-left:2em;
+  }
+  table.formTable td p.school-graduation{
+    margin:0.5em 0 0 0;
+    padding-left:1em;
+  }
+}
+
+
+
+
+
+
+#formWrap .center{
+  text-align: center;
+}
+#formWrap .mb5{
+  margin-bottom: 5px;
+}
+table.formTable th span,
+form.cmxform label.error,
+label.error,.error {
+  color: red;
+}
+.error {
+  display:inline-block;
+}
+
+#formWrap .small{
+  text-align:center;
+  font-size:16px;
+}
+#formWrap .certify {
+  margin:0 auto 10px;
+  text-align:center;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+}
+@media only screen and (max-width: 767px) {
+  #formWrap .certify {
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (max-width:767px) {
+	body{position: relative;}
+	#header{top:0;left: 0;}
+  #formWrap {
+  	width:100%;
+  	margin:15px auto 30px;
+    padding:0 5%;
+  }
+  table.formTable th, table.formTable td {
+  	width:auto;
+  	display:block;
+  }
+  table.formTable th {
+  	margin-top:5px;
+  	border-bottom:0;
+  }
+  input[type="text"], textarea {
+  	width:95%;
+  	padding:5px;
+  	font-size:14px;
+  	display:block;
+  }
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+  	display:block;
+  	width:60%;
+  	margin: 10px auto;
+  	height:50px;
+    font-size:18px;
+  }
+  #header li{margin-bottom: 0;}
+
+  #request .sec-form{
+		padding-bottom: 40px;
+		margin: 0 auto 40px;
+	}
+}
+
+
+
+#goToRequest a,
+#goToRequest img{
+  display:none;
+}

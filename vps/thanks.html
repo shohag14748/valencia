@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- metaタグの直後に設置 -->
+<script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+<script>
+var ua = navigator.userAgent
+// タブレット端末かどうか
+var sp = (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
+var tab = (!sp && (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0))
+// タブレット端末でのみ、PC向けデザインの最小幅を、viewportの最小幅に設定
+//if (tab) new ViewportExtra(1280)
+
+// タブレットの場合: PC向けデザインの最小幅
+// タブレットでない場合: 375px
+new ViewportExtra(tab ? 1280 : 375)
+</script>
+
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="robots" content="index,follow">
+
+<meta name="description" content="月額900円から使えるWindows VPS｜WinserverのVPSは業界最高のコストパフォーマンス｜OSは最新のWindows Server 2019～2012の中から選択可能｜全プランSSDを搭載｜スケールアップ可｜充実の無料サポート">
+<meta name="keywords" content="">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,700;1,400&family=Noto+Sans+JP:wght@500;700;900&display=swap">
+
+
+<link rel="stylesheet" href="parts/css/reset.css" type="text/css">
+<link rel="stylesheet" href="parts/css/style.css" type="text/css">
+
+<title>お問い合わせ 送信完了｜Windows VPSならWindows専門のWinserver</title>
+
+</head>
+
+
+<body class="home">
+<div id="wrapper">
+
+
+
+<!-- HEADER -->
+<header class="header">
+
+	<!--　PC　-->
+	<div class="pc2">
+		<div class="inner">
+			<div class="title-box">
+				<h1 class="title">Windows VPSならWindows専門のWinserver</h1>
+				<p class="logo"><a href="./"><img src="parts/img/logo_pc.png" alt=""></a></p>
+			</div>
+			<ul class="gnav">
+				<li><a href="./#plan">料金プラン</a></li>
+				<li><a href="./#character">特徴</a></li>
+				<li><a href="./#compare">他社との比較</a></li>
+				<li><a href="./#perform">基本性能</a></li>
+				<li><a href="./#option">オプション</a></li>
+				<li><a href="./#flow">お申込みの流れ</a></li>
+				<li><a href="./#faq">よくある質問</a></li>
+			</ul><!-- //.gnav -->
+		</div>
+	</div>
+
+	<!--　SP　-->
+	<div class="sp2">
+		<div class="inner">
+			<div class="title-box">
+			<h1 class="title">Windows VPSならWindows専門のWinserver</h1>
+			<p class="logo"><img src="parts/img/logo_sp.png" alt=""></a></p>
+		</div>
+			<p class="open"><img src="parts/img/menu_open.svg" alt="MENU" id="menu-btn"></p>
+			<div id="menu-conts" class="fadein">
+        <div class="accordion-menu theme-accordion">
+          <p class="alone noimg"><a href="./#plan">料金プラン</a></p>
+          <p class="alone noimg"><a href="./#compare">他社との比較</a></p>
+          <p class="alone noimg"><a href="./#character">特徴</a></p>
+          <p class="alone noimg"><a href="./#perform">基本性能</a></p>
+          <p class="alone noimg"><a href="./#option">オプション</a></p>
+					<p class="alone noimg"><a href="./#flow">お申込みの流れ</a></p>
+					<p class="alone noimg"><a href="./#faq">よくある質問</a></p>
+        </div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+
+
+<!-- CONTACT -->
+<section class="sec-contact">
+  <div class="inner">
+		<h2 class="sub-head"><span>お問い合わせフォーム</span>Contact</h2>
+
+		<h3 class="finish">送信が完了しました。</h3>
+
+		<p class="btn"><a href="./">TOPへ戻る</a></p>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- FOOTER -->
+<section class="footer">
+	<div class="inner">
+		<!-- COPYRIGHT -->
+		<p class="copyright">Copyright &copy; 2020 Winserver All rights reserved.</p>
+
+		<!-- BACK TO TOP-->
+		<div id="backToTop">
+			<div class="inner">
+				<span class="totop"><a href="#wrapper"><img src="parts/img/btn_totop_on.svg" alt=""></a></span>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+
+</div><!-- //#wrapper -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+
+<script src="parts/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="pragma" content="non-cache">
+<meta http-equiv="cache-control" content="non-cache">
+<meta http-equiv="expires" content="0">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- metaタグの直後に設置 -->
+<script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+<script>
+var ua = navigator.userAgent
+// タブレット端末かどうか
+var sp = (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
+var tab = (!sp && (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0))
+// タブレット端末でのみ、PC向けデザインの最小幅を、viewportの最小幅に設定
+//if (tab) new ViewportExtra(1280)
+
+// タブレットの場合: PC向けデザインの最小幅
+// タブレットでない場合: 375px
+new ViewportExtra(tab ? 1280 : 375)
+</script>
+
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="robots" content="index,follow">
+
+<meta name="description" content="月額900円から使えるWindows VPS｜WinserverのVPSは業界最高のコストパフォーマンス｜OSは最新のWindows Server 2019～2012の中から選択可能｜全プランSSDを搭載｜スケールアップ可｜充実の無料サポート">
+<meta name="keywords" content="">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,700;1,400&family=Noto+Sans+JP:wght@500;700;900&display=swap">
+
+<link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
+
+<link rel="stylesheet" href="parts/css/reset.css" type="text/css">
+<link rel="stylesheet" href="parts/css/style.css" type="text/css">
+
+
+
+<title>Windows VPSならWindows専門のWinserver</title>
+
+</head>
+
+
+<body class="home">
+<div id="wrapper">
+
+
+
+<!-- HEADER -->
+<header class="header">
+
+	<!--　PC　-->
+	<div class="pc2">
+		<div class="inner">
+			<div class="title-box">
+				<h1 class="title">Windows VPSならWindows専門のWinserver</h1>
+				<p class="logo"><a href="./"><img src="parts/img/logo_pc.png" alt=""></a></p>
+			</div>
+			<ul class="gnav">
+				<li><a href="./#plan" onclick="window.location.reload()"><span>料金プラン</span></a></li>
+				<li><a href="#character"><span>特徴</span></a></li>
+				<li><a href="#compare"><span>他社との比較</span></a></li>
+				<li><a href="#perform"><span>基本性能</span></a></li>
+				<li><a href="#option"><span>オプション</span></a></li>
+				<li><a href="#flow"><span>お申込みの流れ</span></a></li>
+				<li><a href="#faq"><span>よくある質問</span></a></li>
+			</ul><!-- //.gnav -->
+		</div>
+	</div>
+
+	<!--　SP　-->
+	<div class="sp2">
+		<div class="inner">
+			<div class="title-box">
+			<h1 class="title">Windows VPSならWindows専門のWinserver</h1>
+			<p class="logo"><a href="./"><img src="parts/img/logo_sp.png" alt=""></a></p>
+		</div>
+			<p class="open"><img src="parts/img/menu_open.svg" alt="MENU" id="menu-btn"></p>
+			<div id="menu-conts" class="fadein">
+        <div class="accordion-menu theme-accordion">
+          <p class="alone noimg"><a href="#plan"><span>料金プラン</span></a></p>
+          <p class="alone noimg"><a href="#compare">他社との比較</a></p>
+          <p class="alone noimg"><a href="#character">特徴</a></p>
+          <p class="alone noimg"><a href="#perform">基本性能</a></p>
+          <p class="alone noimg"><a href="#option">オプション</a></p>
+					<p class="alone noimg"><a href="#flow">お申込みの流れ</a></p>
+					<p class="alone noimg"><a href="#faq">よくある質問</a></p>
+        </div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+
+
+<!-- MV -->
+<section class="sec-mv">
+  <div class="inner">
+		<h2 class="lead">
+			<picture>
+				<source media="(max-width: 767px)" srcset="parts/img/mv_lead_sp.svg" alt="">
+				<img src="parts/img/mv_lead_pc.svg" alt="">
+			</picture>
+		</h2>
+		<p class="cost">
+			<picture>
+				<source media="(max-width: 767px)" srcset="parts/img/mv_cost_sp.svg" alt="">
+				<img src="parts/img/mv_cost_pc.svg" alt="">
+			</picture>
+		</p>
+		<p class="btn-mv"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- PLAN -->
+<div id="plan"></div>
+<section class="sec-plan">
+
+  <div class="tab_wrap">
+		<input id="tab1" type="radio" name="tab_btn" checked>
+		<input id="tab2" type="radio" name="tab_btn">
+		<input type="radio" id="tab3" name="tab_btn" value="./#plan" onclick="location.href=this.value">
+
+		<div class="tab_area">
+			<label class="tab1_label" for="tab1">
+				<h2 class="tab-head">料金プラン<span>Windows VPS SSD</span></h2>
+			</label>
+			<label class="tab2_label" for="tab2">
+				<p class="balloon">ハイスペック<br>プラン</p>
+				<h2 class="tab-head">料金プラン2<span>Windows VPS SSD</span></h2>
+			</label>
+		</div>
+
+		<div class="panel_area">
+
+			<p class="text">Winserverでは、お客様のニーズに合わせて、豊富なプランをご用意しております。全てのプランで高速処理が可能なSSDを搭載しており、業界最高のコストパフォーマンスを誇ります。</p>
+
+			<div id="panel1" class="tab_panel">
+				<table>
+					<tr>
+						<td class="nodata">&nbsp;</td>
+						<th class="spec1">SSD1902-<span>1G</span></th>
+						<th class="spec2">SSD1902-<span>2G</span></th>
+						<th class="spec3">SSD1902-<span>4G</span></th>
+					</tr>
+					<tr>
+						<td class="sub-ttl">月額費用</td>
+						<td class="month spec1"><span>900</span>円～</td>
+						<td class="month spec2"><span>1,800</span>円～</td>
+						<td class="month spec3"><span>3,500</span>円～</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">メモリ</td>
+						<td class="barlow">1GB</td>
+						<td class="barlow">2GB</td>
+						<td class="barlow">4GB</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl barlow">CPU</td>
+						<td>3コア</td>
+						<td>4コア</td>
+						<td>7コア</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">ディスク容量</td>
+						<td class="barlow">SSD 70GB</td>
+						<td class="barlow">SSD 120GB</td>
+						<td class="barlow">SSD 230GB</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">初期費用</td>
+						<td>無料</td>
+						<td>無料</td>
+						<td>無料</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="panel2" class="tab_panel">
+				<table>
+					<tr>
+						<td class="nodata">&nbsp;</td>
+						<th class="spec1">SSD1902-<span>8G</span></th>
+						<th class="spec2">SSD1902-<span>16G</span></th>
+						<th class="spec3">SSD1902-<span>32G</span></th>
+					</tr>
+					<tr>
+						<td class="sub-ttl">月額費用</td>
+						<td class="month spec1"><span>7,000</span>円～</td>
+						<td class="month spec2"><span>13,200</span>円～</td>
+						<td class="month spec3"><span>26,600</span>円～</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">メモリ</td>
+						<td class="barlow">8GB</td>
+						<td class="barlow">16GB</td>
+						<td class="barlow">32GB</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl barlow">CPU</td>
+						<td>7コア</td>
+						<td>9コア</td>
+						<td>11コア</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">ディスク容量</td>
+						<td class="barlow">SSD 450GB</td>
+						<td class="barlow">SSD 900GB</td>
+						<td class="barlow">SSD 1.7TB</td>
+					</tr>
+					<tr>
+						<td class="sub-ttl">初期費用</td>
+						<td>無料</td>
+						<td>無料</td>
+						<td>無料</td>
+					</tr>
+				</table>
+			</div>
+
+			<p class="text2">※表示価格は全て税抜きです。</p>
+
+			<p class="btn"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+
+			<div class="tab_area">
+				<div class="hispec">
+					<label class="tab3_label hovernone" for="tab3">更にハイスペックをお探しの方はこちら</label>
+				</div>
+			</div>
+
+		</div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- CHARACTER -->
+<div id="character"></div>
+<section class="sec-character">
+  <div class="inner">
+		<h2 class="sub-head-y"><span>Winserver VPSの特徴</span>Characteristic</h2>
+
+		<div class="character-box">
+			<div class="box n01">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch01.svg" alt="特徴01 最新OS"></p>
+					<h3 class="lead">最新OSを選択可能</h3>
+					<p class="text">管理者権限を自由に設定するなど、Windows Server 2019で利用可能な最新の機能と技術を活用できます。お客様の環境に応じてOSを選択することが可能です。但し、Windows Server 2016はリソースの消費が大きい為、Windows Server 2019 / 2012 R2 / 2012 を推奨しています。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig01.svg" alt="最新OS"></p>
+			</div>
+
+			<div class="box rev n02">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch02.svg" alt="特徴02 Hyper-V"></p>
+					<h3 class="lead">Hyper-Vを使用</h3>
+					<p class="text">Microsoft社が提供する高機能ハイパーバイザー型仮想化技術であるHyper-Vを使用しています。Hyper-Vを使用すれば、新しい環境構築を準備する際に、必要最小限の時間と手間で実現することが可能です。また、Hyper-V上の仮想マシンのOSは、使用シーンや用途に合わせて最適なOSをインストールできます。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig02.svg" alt="Hyper-V"></p>
+			</div>
+
+			<div class="box n03">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch03.svg" alt="特徴03 無料サポート"></p>
+					<h3 class="lead">充実の無料サポート</h3>
+					<p class="text">営業時間内は電話での問い合わせを受け付けています。また、メールでのお問い合わせは24時間受け付けており、回答は早ければ当日中、遅くても1営業日以内に回答いたします。専門のスタッフが、お申込み前の相談からサービス開始後の利用方法までサポートします。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig03.svg" alt="無料サポート"></p>
+			</div>
+
+			<div class="box rev n04">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch04.svg" alt="特徴04 メモリ完全保証"></p>
+					<h3 class="lead">メモリ完全保証</h3>
+					<p class="text">ホストサーバーごとに顧客数の制限＆調整を行い、効果的に管理することにより、お客様のメモリを完全保証します。全てのお客様がメモリを最大に使用した場合においても十分な空き容量を確保していますので、常に快適に利用することが可能です。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig04.svg" alt="メモリ完全保証"></p>
+			</div>
+
+			<div class="box n05">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch05.svg" alt="特徴05 SSD搭載"></p>
+					<h3 class="lead">SSD搭載</h3>
+					<p class="text">従来のHDD（ハードディスクドライブ）より高速処理が可能となったSSD（ソリッドステートドライブ）を搭載しています。データの読み取り、および、書き込み速度を最大100倍高速に実行し、Webサイトのアクセス速度を改善します。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig05.svg" alt="SSD搭載"></p>
+			</div>
+
+			<div class="box rev n06">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch06.svg" alt="特徴06 スケールアップ"></p>
+					<h3 class="lead">スケールアップ</h3>
+					<p class="text">必要に応じてプランのスケールアップが可能です。「軽めのプランで始めてみたものの、利用しているうちに容量が足りなくなってしまった」といった場合でも安心。迅速にプランのスケールアップに対応します。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig06.svg" alt="スケールアップ"></p>
+			</div>
+
+			<div class="box n07">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch07.svg" alt="特徴07 稼働率99.99％"></p>
+					<h3 class="lead">稼働率99,99％</h3>
+					<p class="text">サーバー稼働率は99.99％。大阪府内のデータセンターに設置し、24時間監視体制です。大型ディーゼル発電で電力を供給し続けることが可能ですので、非常時の停電でもサーバーが止まることはなく、ビジネス利用にオススメです。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig07.svg" alt="稼働率99.99％"></p>
+			</div>
+
+			<div class="box rev n08">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch08.svg" alt="特徴08 データ保護"></p>
+					<h3 class="lead">データ保護</h3>
+					<p class="text">RAID50を採用しています。分散パリティ＋ストライピングを介してディスク障害から保護し、緊急時にはデータを安全にバックアップいたします。※お客様環境のバックアップはご自身で行う必要があります。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig08.svg" alt="データ保護"></p>
+			</div>
+
+			<div class="box n09">
+				<div class="txt">
+					<p class="catch"><img src="parts/img/chara_catch09.svg" alt="特徴09 セキュリティ"></p>
+					<h3 class="lead">セキュリティ対策</h3>
+					<p class="text">随時外部からのアタックの遮断を行っており、万全のセキュリティ管理体制です。Windowsファイアウォールにて、お客様の環境に合わせて設定を行うことが可能です。全てのサーバーで小規模なボリュームのDDoS攻撃からの保護します。</p>
+				</div>
+				<p class="fig"><img src="parts/img/chara_fig09.svg" alt="セキュリティ"></p>
+			</div>
+
+		</div>
+
+		<p class="btn-wh"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- COMPARE -->
+<div id="compare"></div>
+<section class="sec-compare">
+  <div class="inner">
+		<p class="image"><img src="parts/img/comp_fig.svg" alt="比較"></p>
+		<h2 class="sub-head"><span>他社Windows <br class="pcnone">VPSとの比較</span>Comparison</h2>
+		<p class="text">WinserverのWindows VPSは業界最高のコストパフォーマンスを誇ります。メモリ1GBで他社Windows VPSとの構成や料金を比較してみると一目瞭然です。</p>
+
+		<table class="compare-table">
+			<tr>
+				<th class="nodata">&nbsp;</th>
+				<th class="appeal">Winserver</th>
+				<th>S社</th>
+				<th>K社</th>
+				<th>A社</th>
+				<th class="last-g">G社<br class="pcnone">(※)</th>
+			</tr>
+			<tr>
+				<td class="obi">メモリ</td>
+				<td class="appeal">1GB</td>
+				<td>1GB</td>
+				<td>1GB</td>
+				<td>1GB</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>コア</td>
+				<td class="appeal">3コア</td>
+				<td>2コア</td>
+				<td>1コア</td>
+				<td>2コア</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td class="obi">SSD</td>
+				<td class="appeal">70GB</td>
+				<td>50GB</td>
+				<td>30GB</td>
+				<td>60GB</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>初期費用</td>
+				<td class="appeal">0円</td>
+				<td>0円</td>
+				<td>0円</td>
+				<td>1,800円</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td class="obi">1ヶ月契約<br>月額費用</td>
+				<td class="appeal">1,000円</td>
+				<td>1,000円</td>
+				<td>950円</td>
+				<td>1,981円</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>6ヶ月契約<br>月額費用</td>
+				<td class="appeal">950円</td>
+				<td>1,000円</td>
+				<td>950円</td>
+				<td>1,791円</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td class="obi">12ヶ月契約<br>月額費用</td>
+				<td class="appeal last-td">900円</td>
+				<td class="last-td">917円</td>
+				<td class="last-td">950円</td>
+				<td class="last-td">1,600円</td>
+				<td class="last-td">-</td>
+			</tr>
+		</table>
+
+		<p class="text">メモリ1GBだけでなく、人気No.1のメモリ4GBプランをはじめ、全てのプランで業界最高のコストパフォーマンスを誇ります。<br>※G社の場合、Windows OSプランはメモリ6GB以上のプランでないと選択不可。</p>
+
+		<p class="btn"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+
+	</div>
+</section>
+
+
+
+
+
+<!-- PERFORM -->
+<div id="perform"></div>
+<section class="sec-perform">
+  <div class="inner">
+		<p class="image"><img src="parts/img/perform_fig.svg" alt="基本性能"></p>
+		<h2 class="sub-head"><span>基本性能</span>Performance</h2>
+
+		<table class="perform-table">
+			<tr>
+				<th>仮想化<br class="pcnone">ソフトウェア</th>
+				<td>Hyper-V</td>
+			</tr>
+			<tr>
+				<th>IPアドレス</th>
+				<td>1個(IPv4）</td>
+			</tr>
+			<tr>
+				<th>回線速度</th>
+				<td>100Mbps</td>
+			</tr>
+			<tr>
+				<th>データ転送量</th>
+				<td>無制限</td>
+			</tr>
+			<tr>
+				<th>RAID</th>
+				<td><img class="icon-circle" src="parts/img/icon_circle.svg" alt="">（RAID 50）</td>
+			</tr>
+			<tr>
+				<th>OS</th>
+				<td>Windows Server 2019 / 2016 / 2012 R2 / 2012</td>
+			</tr>
+		</table>
+
+	</div>
+</section>
+
+
+
+
+
+
+
+<!-- OPTION -->
+<div id="option"></div>
+<section class="sec-option">
+  <div class="inner">
+		<h2 class="sub-head"><span>選べるオプション</span>Option</h2>
+
+
+		<div class="table-scroll js-scrollable">
+			<table class="option-table">
+				<tr>
+					<th class="nodata sticky">&nbsp;</th>
+					<td class="element">費用</td>
+					<td class="element">備考</td>
+				</tr>
+				<tr>
+					<th class="sticky">メモリ追加</th>
+					<td>1GBにつき2,000円/月</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th class="sticky">vCPU追加</th>
+					<td>1コアにつき2,000円/月</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th class="sticky">ディスク容量追加</th>
+					<td>SSD 10GBにつき500円/月</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th class="sticky">SQL Server <br class="pcnone">Web Edition</th>
+					<td>3,000円/月</td>
+					<td>2019/2017/2016/2014/2012 <br class="pcnone">選択可能</td>
+				</tr>
+				<tr>
+					<th class="sticky">Remote Desktop<br>Services License</th>
+					<td>1ユーザーあたり600円/月</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th class="sticky">Office 2016 <br class="pcnone">Standard</th>
+					<td>1ライセンスあたり1,300円</td>
+					<td>ご利用人数分の<br class="pcnone">「Remote Desktop Services License」<br class="pcnone">と「Office 2016 Standard」の<br class="pcnone">ご契約が必要です</td>
+				</tr>
+				<tr>
+					<th class="sticky">SSL証明書</th>
+					<td>5,000円/年～</td>
+					<td>【JPRS SSL】<br class="pcnone">5,000円/1年、9,000円/2年<br>【QuickSSL Premium】<br class="pcnone">29,000円/1年</td>
+				</tr>
+				<tr>
+					<th class="sticky">Windowsサーバ<br>セキュリティ</th>
+					<td>初年度費用15,000円<br>更新費用（2年目以降）10,000円<br>※年度一括払い</td>
+					<td>F-Secure様で販売しております<br class="pcnone">Windowsサーバー用の<br class="pcnone">セキュリティソフトになります。<br>※途中解約はできません</td>
+				</tr>
+				<tr>
+					<th class="sticky">SiteGuard Server <br class="pcnone">Edition</th>
+					<td>12,000円/月</td>
+					<td>JP-Secure様で販売しております<br class="pcnone">Webアプリケーションファイアウォールに<br class="pcnone">なります。<br>※途中解約はできません</td>
+				</tr>
+			</table>
+		</div>
+
+		<p class="text2">※表示価格は全て税抜きです。</p>
+
+		<p class="btn"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+
+	</div>
+</section>
+
+
+
+
+
+<!-- FLOW -->
+<div id="flow"></div>
+<section class="sec-flow">
+  <div class="inner">
+		<p class="image"><img src="parts/img/flow_fig.svg" alt="Flow"></p>
+		<h2 class="sub-head"><span>お申込みの流れ</span>Flow</h2>
+
+		<div class="flow-box">
+			<div class="box">
+				<p class="step"><img src="parts/img/flow_step01.svg" alt="STEP01"></p>
+				<div class="txt">
+					<h3 class="lead">プランの選択</h3>
+					<p class="text">お好きなプランにお申込みください。必要なオプションを選択いただけます。</p>
+				</div>
+			</div>
+
+			<div class="box">
+				<p class="step"><img src="parts/img/flow_step02.svg" alt="STEP02"></p>
+				<div class="txt">
+					<h3 class="lead">お申込み完了</h3>
+					<p class="text">プラン/オプションの選択後、申込情報を入力し、決済を完了してください。</p>
+				</div>
+			</div>
+
+			<div class="box">
+				<p class="step"><img src="parts/img/flow_step03.svg" alt="STEP03"></p>
+				<div class="txt">
+					<h3 class="lead">環境構築</h3>
+					<p class="text">お申込み後、1営業日以内にサーバーを設置いたします。設置完了後、ログイン情報を速やかにご連絡いたします。</p>
+				</div>
+			</div>
+
+			<div class="box">
+				<p class="step"><img src="parts/img/flow_step04.svg" alt="STEP04"></p>
+				<div class="txt">
+					<h3 class="lead">利用開始</h3>
+					<p class="text">ログイン情報を元に管理画面へログインすると、すぐにご利用いただけます。</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+
+
+<!-- BTN -->
+<section class="sec-btn">
+	<p class="btn"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+</section>
+
+
+
+
+<!-- FAQ -->
+<div id="faq"></div>
+<section class="sec-faq">
+  <div class="inner">
+		<p class="image"><img src="parts/img/faq_fig.svg" alt="よくある質問"></p>
+		<h2 class="sub-head-y"><span>よくある質問</span>FAQ</h2>
+
+		<div id="step" class="box-step">
+			<div class="box">
+				<p class="question">
+					<span class="barlow">Q</span>どのプランを選んだらよいか分からないのですが…
+				</p>
+				<ul class="answer">
+					<li class="barlow">A</li>
+					<li>どのプランにするべきかの判断基準は、あなたが必要としているメモリとディスクの容量です。環境に合わせて適切な容量のプランを選ぶことで、無駄なコストを省くことが可能です。どのプランがよいか迷われている方やご不明な点がございましたらお気軽にお問い合わせください。</li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<p class="question">
+					<span class="barlow">Q</span>プラン変更は可能ですか？
+				</p>
+				<ul class="answer">
+					<li class="barlow">A</li>
+					<li>プランアップにつきましては、現在の環境を引き継いだ状態で行う事が可能です。プランダウンはお受けできませんのでご注意ください。</li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<p class="question">
+					<span class="barlow">Q</span>申込みからどれくらいで利用可能ですか？
+				</p>
+				<ul class="answer">
+					<li class="barlow">A</li>
+					<li>お申込み完了から1営業日以内、最短3時間でサービスのご利用が可能です。まずはお気軽にお問い合わせください。</li>
+				</ul>
+			</div>
+		</div>
+
+		<p class="btn-wh"><a href="https://www.winserver.ne.jp/vps-ssd/apply" target="_blank">お申込みはこちら</a></p>
+
+	</div>
+</section>
+
+
+
+
+
+<!-- CONTACT -->
+<div id="contact"></div>
+<section class="sec-contact">
+  <div class="inner">
+		<h2 class="sub-head"><span>お問い合わせフォーム</span>Contact</h2>
+		<p class="text">
+			お申込み前のご相談につきましてはこちらからお問い合わせください。<br>
+			本契約前に一度試してみたいという方は、以下のフォームよりお問い合わせください。<br>
+			VPSを2週間試用いただける環境をご用意いたします。<br>
+			試用期間終了後から1週間以内に本契約いただくと、試用期間で利用した環境をそのまま本番で利用することができます。
+		</p>
+
+		<!-- FORM -->
+		<div id="formWrap">
+			<form method="post" action="mail.php" id="applyForm">
+
+				<table class="formTable">
+					<tr>
+						<td>
+							<p class="item">会社名</p>
+							<input size="20" type="text" name="会社名" placeholder="">
+							<div id="会社名_error"></div>
+						</td>
+						<td>
+							<p class="item">会社名カナ</p>
+							<input size="20" type="text" name="会社名カナ" placeholder="">
+							<div id="会社名カナ_error"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="item">氏名<span>【必須】</span></p>
+							<input size="20" type="text" name="氏名" placeholder="">
+							<div id="氏名_error"></div>
+						</td>
+						<td>
+							<p class="item">氏名カナ</p>
+							<input size="20" type="text" name="氏名カナ" placeholder="">
+							<div id="氏名カナ_error"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="item">電話番号</p>
+							<input size="20" type="text" name="電話番号" placeholder="">
+							<div id="電話番号_error"></div>
+						</td>
+						<td>
+							<p class="item">メールアドレス<span>【必須】</span></p>
+							<input size="20" type="text" name="メールアドレス" placeholder="">
+							<div id="メールアドレス_error"></div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="comment">
+						<p class="item">問い合わせ内容<span>【必須】</span></p>
+						<textarea name="問い合わせ内容" cols="50" rows="5"></textarea>
+						</td>
+					</tr>
+				</table>
+
+				<input type="submit" value="送信する" class="btn-submit">
+
+			</form>
+		</div><!-- #formWrap -->
+
+	</div>
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+<section class="footer">
+	<div class="inner">
+		<!-- COPYRIGHT -->
+		<p class="copyright">Copyright &copy; 2020 Winserver All rights reserved.</p>
+
+		<!-- BACK TO TOP-->
+		<div id="backToTop">
+			<div class="inner">
+				<span class="totop"><a href="#wrapper"><img src="parts/img/btn_totop_on.svg" alt=""></a></span>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+</div><!-- //#wrapper -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+
+<script src="parts/js/script.js"></script>
+
+<script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
+<script>
+new ScrollHint('.js-scrollable', {
+  i18n: {
+    scrollable: 'スクロールできます'
+  }
+});
+</script>
+
+
+<script src="jquery.validate.js" ></script>
+<script>
+	$(function() {
+		$("#applyForm").validate({
+			rules: {
+					氏名: {
+							required: true
+					},
+					メールアドレス: {
+							required: true,
+							email: true
+					},
+					問い合わせ内容: {
+							required: true
+					}
+			},
+			messages: {
+					氏名: {
+							required: "氏名を入力してください。"
+					},
+					メールアドレス: {
+							required: "メールアドレスを入力してください。",
+							email: "メールアドレスの形式で入力してください。"
+					},
+					問い合わせ内容: {
+							required: "問い合わせ内容を入力してください。"
+					}
+			 }
+		});
+	});
+	</script>
+
+
+</body>
+</html>

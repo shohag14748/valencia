@@ -1210,6 +1210,59 @@ footer p {
     transform: translate(-50%,-50%);
 }
 
+
+
+th.next,
+th.prev {
+    border: 1px solid #E8E9EC !important;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    display: flex;
+    justify-content: center;
+    color: #A4AFB7;
+    background: #fff;
+}
+.datepicker-dropdown{
+    padding: 15px;
+}
+.datepicker-switch {
+    font-size: 12px;
+    vertical-align: bottom;
+    font-weight: bold;
+    color: #BF9774;
+}
+.table-condensed thead .datepicker-title{
+    text-align: left;
+    border-bottom: 10px solid #fff;
+}
+.table-condensed thead tr:nth-child(2){
+    border-bottom: 15px solid #fff;
+}
+.table-condensed thead tr:nth-child(3){
+    background-color: #EFE2D6;
+    border: 1px solid #E8E9EC;
+}
+.table-condensed thead .dow{
+    font-size: 12px;
+    color: #BF9774;
+    font-weight: bold;
+    padding: 10px;
+}
+.datepicker table tr td, .datepicker table tr th{
+    border-radius: 0 !important;
+}
+.datepicker table .day{
+    border: 1px solid #E8E9EC;
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+    color: #000;
+}
+
+.datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active:active{
+    background-color: #BF9774 !important;
+    border-color: #E8E9EC !important;
+}
+
 /* ----------- responsive ----------- */
 
 @media (max-width:1200px) {
