@@ -77,7 +77,7 @@
     </section>
     <!-- ---------- banner end ---------- -->
 
-    <!-- ---------- video start ---------- -->
+    <!-- ---------- jobContent start ---------- -->
     <section class="jobContent" id="jobContent">
         <div class="title">
             <h2><span>お</span>仕<span>事</span>内<span>容</span></h2>
@@ -89,6 +89,7 @@
                     <p>チャットレディとは、パソコンとWebカメラを使用し、チャット運営会社が提供するサービスに登録された男性ユーザー様とインターネット上にてリアルタイムでコミュニケーションを行う女性の事です。</p>
                 </div>
                 <div class="collapse-details">
+                   <div class="collapse-text">
                     <p>ここ数年YouTubeやInstagramでもリアルタイムに映像を配信できる機能がありますが、それらはYouTuberやInstagramerと呼ばれチャットレディは、ライブチャットを目的としたサービスを提供する会社で働く女性にだけ用いられる言葉を指します。<br>
                         チャットレディのお仕事はチャットサイトに登録された男性ユーザー様がポイントを購入しチャット（会話）したいと思った女性にチャット機能を用いてアプローチしてきます。<br>
                         チャット（会話）が開始されると同時に男性ユーザー様は事前に購入したポイントを消費し接続を維持する事になります。<br>
@@ -98,6 +99,7 @@
                         もちろん食事などの休憩も自分のペースで自由に行えるので堅苦しいオフィスワークが向いていないと感じる方には魅力的なお仕事の一つです。<br>
                         チャットレディのお仕事は、18歳以上（高校生不可）の女性なら誰でも簡単に始められるので、空き時間に手軽にできるアルバイトをお探しならぜひお気軽にご相談下さい。
                     </p>
+                    </div>
                     <a href="" class="button">もっと見る
                         <svg xmlns="http://www.w3.org/2000/svg" width="11.018" height="15.669" viewBox="0 0 11.018 15.669">
                             <path id="right-arrow" d="M10.552,4.84a.556.556,0,0,0-.79.782l4,4H.553A.55.55,0,0,0,0,10.179a.556.556,0,0,0,.553.561H13.766l-4,4a.567.567,0,0,0,0,.79.553.553,0,0,0,.79,0L15.5,10.574a.544.544,0,0,0,0-.782Z" transform="translate(15.692) rotate(90)" fill="#bf9774" />
@@ -128,7 +130,7 @@
             <img src="assets/images/bubble/green.svg" alt="" class="b11">
         </div>
     </section>
-    <!-- ---------- video end ---------- -->
+    <!-- ---------- jobContent end ---------- -->
 
     <!-- ---------- About Salary start ---------- -->
     <section class="aboutSalary" id="aboutSalary">
@@ -190,6 +192,8 @@
         </div>
     </section>
     <!-- ---------- About Salary end ---------- -->
+    
+    <!-- ---------- img-sec start ---------- -->
     <section class="img-sec">
         <img src="assets/images/img-sec.jpg" alt="">
         <div class="bubble">
@@ -198,7 +202,9 @@
             <img src="assets/images/bubble/blue.svg" alt="" class="b3">
         </div>
     </section>
-    <!-- ---------- gallery start ---------- -->
+    <!-- ---------- img-sec end ---------- -->
+    
+    <!-- ---------- chatRooms start ---------- -->
     <section class="chatRooms" id="chatRooms">
         <div class="title">
             <h2><span>チ</span>ャ<span>ッ</span>ト<span>ル</span>ー<span>ム</span>の<span>ご</span>紹<span>介</span></h2>
@@ -251,9 +257,9 @@
             <img src="assets/images/bubble/blue.svg" alt="" class="b5">
         </div>
     </section>
-    <!-- ---------- gallery end ---------- -->
+    <!-- ---------- chatRooms end ---------- -->
 
-    <!-- ---------- support start ---------- -->
+    <!-- ---------- faq start ---------- -->
     <section class="faq" id="faq">
         <div class="title">
             <h2><span>よ</span>く<span>あ</span>る<span>質</span>問</h2>
@@ -367,7 +373,7 @@
             <img src="assets/images/bubble/blue.svg" alt="" class="b6">
         </div>
     </section>
-    <!-- ---------- support end ---------- -->
+    <!-- ---------- faq end ---------- -->
 
     <!-- ---------- Application start ---------- -->
     <section class="application" id="application">
@@ -495,9 +501,12 @@
         </div>
     </section>
     <!-- ---------- Application end ---------- -->
+    
+    <!-- ---------- footer start ---------- -->
     <footer>
         <p>Copyright © 2020 Valencia All rights reserved.</p>
     </footer>
+    <!-- ---------- footer end ---------- -->
 
     <div class="goToTop">
         <img src="assets/images/arrowup.svg" alt="">
@@ -570,7 +579,19 @@
                 if ($("#name").val() == '') {
                     alert('ok');
                 }
-            })
+            });
+            
+            $(".collapse-details .button").click(function(e){
+                e.preventDefault();
+                var $text = $(".collapse-text");
+                var contentHeight = $text
+                                    .addClass('heightAuto').height();
+                $text.removeClass('heightAuto').animate({ 
+                    height: (contentHeight == $text.height() ? 100 : contentHeight)
+                }, 500);
+                $(this).fadeOut(300).parent().addClass('active');
+
+            });
 
             $("#applyForm").validate({
                 rules: {

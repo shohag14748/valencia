@@ -28,10 +28,6 @@
 
 }
 
-
-
-
-
 /* ----------- General ----------- */
 
 * {
@@ -140,10 +136,6 @@ header .navbar-toggler[aria-expanded="true"]::before {
 header .navbar-toggler[aria-expanded="true"]::after {
     transform: translateY(-10px) rotate(45deg);
 }
-
-
-
-
 header .nav-item {
     display: flex;
     align-items: center;
@@ -183,28 +175,7 @@ header .nav-item .nav-link:hover {
     color: #fff !important;
 }
 
-@media (max-width:1200px) {
-    header .navbar-brand img {
-        width: 180px;
-    }
-
-    header .nav-item .nav-link {
-        font-size: 12px;
-    }
-}
-
-@media (max-width:768px) {
-    header .navbar .left p {
-        display: none;
-    }
-
-    header .navbar {
-        padding: 0;
-    }
-}
-
 /* ----------- banner ----------- */
-
 
 .banner {
     padding-top: 92px;
@@ -246,7 +217,6 @@ header .nav-item .nav-link:hover {
     font-family: myFirstFont;
     font-weight: bold;
 }
-
 
 .banner .banner-bottom {
     background-image: url(../images/banner-bg.jpg);
@@ -369,113 +339,7 @@ header .nav-item .nav-link:hover {
     width: 40px;
 }
 
-
-@media (max-width:1200px) {
-    .banner {
-        padding-top: 85px;
-    }
-}
-
-@media (max-width:991px) {
-    .banner .banner-top p {
-        font-size: 22px;
-    }
-
-    .banner .banner-top h2 {
-        font-size: 46px;
-    }
-}
-
-@media (max-width:768px) {
-    .banner {
-        padding-top: 68px;
-    }
-
-    .banner .banner-top p {
-        font-size: 4vw;
-    }
-
-    .banner .banner-top p span {
-        display: block;
-    }
-
-    .banner .banner-top h2 {
-        font-size: 6vw;
-    }
-
-    .banner .banner-top::after {
-        border-top: 15px solid #EF5A88;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-    }
-
-    .banner .banner-bottom {
-        background-image: url(../images/banner-bg-mobile.jpg);
-    }
-
-    .banner .banner-bottom img {
-        width: 550px;
-        max-width: 100%;
-        left: 0%;
-        margin: auto;
-        display: block;
-    }
-
-    .banner .banner-bottom {
-        padding-top: 47vw;
-    }
-
-    .banner .banner-bottom .number {
-        margin-top: 0;
-        padding: 5px;
-    }
-
-    .banner .banner-bottom .number p {
-        font-size: 16px;
-    }
-
-    .banner .banner-bottom .number p small {
-        font-size: 12px;
-    }
-
-    .banner .banner-bottom .number a {
-        font-size: 5.5vw;
-        line-height: 6vw;
-        display: block;
-    }
-
-    .banner .banner-bottom .number a img {
-        width: 5vw;
-    }
-
-    .banner .bubble .b2 {
-        top: -1%;
-    }
-
-    .banner .bubble .b3 {
-        left: 72.8%;
-        top: 15%;
-        width: 9%;
-    }
-}
-
-@media (max-width:500px) {
-    .banner .banner-bottom .number a {
-        font-size: 26px;
-        line-height: 26px;
-        display: block;
-    }
-
-    .banner .banner-bottom .number a img {
-        width: 24px;
-    }
-}
-
-@media (min-width:992px) {
-    .container {
-        max-width: 800px;
-    }
-}
+/* ----------- title ----------- */
 
 .title {
     background-image: url(../images/Valencia.svg);
@@ -485,13 +349,14 @@ header .nav-item .nav-link:hover {
     background-size: auto 100%;
     background-repeat: no-repeat;
     margin-bottom: 50px;
-
 }
 
 .title h2 {
     color: #222222;
     font-size: 48px;
 }
+
+/* ----------- job Content ----------- */
 
 .jobContent {
     background-color: #FCF4F8;
@@ -530,16 +395,27 @@ header .nav-item .nav-link:hover {
 
 .jobContent .collapse-details {
     text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+    transition: .6s;
+}
+.jobContent .collapse-details.active {
+    padding-bottom: 0;
 }
 
 .jobContent .collapse-details p {
-    max-height: 150px;
     overflow: hidden;
     font-size: 14px;
     position: relative;
     text-align: left;
 }
-
+.collapse-text{
+  height:150px;
+  overflow:hidden;
+}
+.heightAuto{
+    height:auto;
+}
 .jobContent .collapse-details p::after {
     content: '';
     height: 100%;
@@ -548,8 +424,12 @@ header .nav-item .nav-link:hover {
     bottom: 0;
     left: 0;
     background: linear-gradient(to top, rgba(252, 244, 248, .9), rgba(252, 244, 248, .1));
+    transition: .3s;
 }
-
+.jobContent .collapse-details.active p::after {
+    opacity: 0;
+    pointer-events: none;
+}
 .jobContent .collapse-details .button {
     font-size: 14px;
     color: #BF9774;
@@ -564,6 +444,10 @@ header .nav-item .nav-link:hover {
     text-decoration: none;
     position: relative;
     margin-top: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .jobContent .collapse-details .button svg {
@@ -611,77 +495,6 @@ header .nav-item .nav-link:hover {
     width: 10vw;
     z-index: 991;
     pointer-events: none;
-}
-
-@media (max-width:1140px) {
-    .jobContent .pop-img .img1 {
-        right: auto;
-        left: 2%
-    }
-
-    .jobContent .pop-img .img2 {
-        left: auto;
-        right: 1%;
-    }
-}
-
-@media (max-width:991px) {
-    .jobContent .subtitle h5 {
-        font-size: 18px;
-    }
-
-    .title {
-        padding: 55px 0 30px;
-        margin-bottom: 40px;
-    }
-
-    .title h2 {
-        font-size: 40px;
-    }
-
-    .jobContent {
-        background-color: #FCF4F8;
-        padding: 80px 0;
-        position: relative;
-    }
-
-    .jobContent .title {
-        padding: 10px 0 70px;
-        margin-bottom: 40px;
-    }
-
-    .jobContent .title h2 {
-        font-size: 40px;
-    }
-
-}
-
-@media (max-width:768px) {
-
-    .button-wrap {
-        margin-top: 40px;
-    }
-
-    .button-wrap .button {
-        padding: 12px 20px;
-        font-size: 20px;
-    }
-
-    .title {
-        padding: 30px 0 20px;
-    }
-
-    .title h2 {
-        font-size: 30px;
-    }
-
-    .jobContent .title {
-        padding: 0px 0 50px;
-    }
-
-    .jobContent .title h2 {
-        font-size: 30px;
-    }
 }
 
 .jobContent .bubble .b1 {
@@ -750,6 +563,7 @@ header .nav-item .nav-link:hover {
     width: 20px;
 }
 
+/* ----------- about Salary ----------- */
 
 .aboutSalary {
     background-color: #F8F3EC;
@@ -810,7 +624,6 @@ header .nav-item .nav-link:hover {
 
 .aboutSalary .chatFunction:nth-child(2) .head hr {
     background-color: #96D1BF;
-
 }
 
 .aboutSalary .chatFunction .body img {
@@ -846,57 +659,6 @@ header .nav-item .nav-link:hover {
 
 .aboutSalary .button-wrap .button {
     background-color: #C47837;
-}
-
-@media (max-width:991px) {
-    .aboutSalary {
-        padding: 80px 0;
-    }
-
-    .aboutSalary .subtitle p {
-        padding-bottom: 50px;
-    }
-
-    .aboutSalary h5 {
-        font-size: 18px;
-    }
-
-    .aboutSalary .chatFunction .head h6 {
-        font-size: 16px;
-    }
-
-    .aboutSalary .chatFunction .footer h2 {
-        font-size: 22px;
-    }
-
-
-    .aboutSalary .chatFunction .footer h2 span {
-        font-size: 30px;
-    }
-
-    .aboutSalary .button-wrap {
-        margin-top: 70px;
-    }
-}
-
-@media (max-width:768px) {
-    .aboutSalary .chatFunctions {
-        column-gap: 15px;
-        grid-template-columns: 100%;
-    }
-
-    .aboutSalary .chatFunction:first-child {
-        margin-bottom: 30px;
-    }
-
-    .aboutSalary .chatFunction .body p {
-        min-height: 150px;
-        margin-bottom: 30px;
-    }
-
-    .aboutSalary .button-wrap {
-        margin-top: 50px;
-    }
 }
 
 .aboutSalary .bubble .b1 {
@@ -953,7 +715,7 @@ header .nav-item .nav-link:hover {
     width: 2.3%;
 }
 
-
+/* ----------- img-sec ----------- */
 
 .img-sec {
     position: relative;
@@ -980,6 +742,8 @@ header .nav-item .nav-link:hover {
     top: 48%;
     width: 2.6%;
 }
+
+/* ----------- chat Rooms ----------- */
 
 .chatRooms {
     background-color: #F8F8E7;
@@ -1013,26 +777,6 @@ header .nav-item .nav-link:hover {
     font-size: 14px;
 }
 
-@media (max-width:991px) {
-    .chatRooms {
-        padding: 50px 0 80px;
-    }
-
-    .chatRooms .single-content img {
-        width: 100%;
-    }
-
-    .chatRooms .single-content h5 {
-        font-size: 18px;
-    }
-}
-
-@media (max-width:768px) {
-    .chatRooms .single-content img {
-        margin-bottom: 30px;
-    }
-}
-
 .chatRooms .bubble .b1 {
     left: -3.5%;
     bottom: 18%;
@@ -1064,10 +808,7 @@ header .nav-item .nav-link:hover {
 
 }
 
-
-
-
-
+/* ----------- faq ----------- */
 
 .faq {
     background-color: #E7F8F3;
@@ -1142,16 +883,6 @@ header .nav-item .nav-link:hover {
     line-height: 30px;
 }
 
-@media (max-width:991px) {
-    .faq {
-        padding: 80px 0;
-    }
-
-    .faq .single-faq a {
-        padding: 10px 15px;
-    }
-}
-
 .faq .bubble .b1 {
     left: 10%;
     top: 18%;
@@ -1188,10 +919,7 @@ header .nav-item .nav-link:hover {
     width: 4%;
 }
 
-
-
-
-
+/* ----------- application ----------- */
 
 .application {
     background-color: #F8F4ED;
@@ -1237,8 +965,6 @@ header .nav-item .nav-link:hover {
     max-width: 600px;
     margin: auto;
 }
-
-.application .line .col-4 {}
 
 .application .line .col-4 img {
     width: 100%;
@@ -1330,7 +1056,6 @@ header .nav-item .nav-link:hover {
     background-position: center right 10px;
 }
 
-
 .application form .input-wrap textarea {
     border: 0;
     padding: 15px;
@@ -1409,7 +1134,190 @@ position: absolute;
     border-radius: 50px;
 }
 
+label.error{
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    top: 100%;
+    margin: 0;
+    color: #EA4545;
+}
+
+/* ----------- footer ----------- */
+
+footer {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* ----------- fixedLine ----------- */
+
+.fixedLine{
+    background-color: #00B900;
+    width: 45px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    top: 300px;
+    padding: 10px 0 20px;
+    z-index: 9999;
+}
+.fixedLine:hover{
+    text-decoration: none;
+}
+.fixedLine img{
+    width: 45px;
+}
+.fixedLine p{
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* ----------- goToTop ----------- */
+
+.goToTop{
+    width: 45px;
+    height: 45px;
+    background: rgba(0,0,0,.25);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    transform: scale(.5);
+    z-index: 99999;
+    display: none;
+    transition: scale .3s ease;
+}
+.goToTop.active{
+    display: block;
+    transform: scale(1);
+}
+.goToTop:hover{
+    background: rgba(0,185,0,.25);
+    
+}
+.goToTop img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* ----------- responsive ----------- */
+
+@media (max-width:1200px) {
+    header .navbar-brand img {
+        width: 180px;
+    }
+
+    header .nav-item .nav-link {
+        font-size: 12px;
+    }
+    .banner {
+        padding-top: 85px;
+    }
+}
+
+@media (max-width:1140px) {
+    .jobContent .pop-img .img1 {
+        right: auto;
+        left: 2%
+    }
+
+    .jobContent .pop-img .img2 {
+        left: auto;
+        right: 1%;
+    }
+}
+
 @media (max-width:991px) {
+    .banner .banner-top p {
+        font-size: 22px;
+    }
+
+    .banner .banner-top h2 {
+        font-size: 46px;
+    }
+    .jobContent .subtitle h5 {
+        font-size: 18px;
+    }
+
+    .title {
+        padding: 55px 0 30px;
+        margin-bottom: 40px;
+    }
+
+    .title h2 {
+        font-size: 40px;
+    }
+
+    .jobContent {
+        background-color: #FCF4F8;
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .jobContent .title {
+        padding: 10px 0 70px;
+        margin-bottom: 40px;
+    }
+
+    .jobContent .title h2 {
+        font-size: 40px;
+    }
+    .aboutSalary {
+        padding: 80px 0;
+    }
+
+    .aboutSalary .subtitle p {
+        padding-bottom: 50px;
+    }
+
+    .aboutSalary h5 {
+        font-size: 18px;
+    }
+
+    .aboutSalary .chatFunction .head h6 {
+        font-size: 16px;
+    }
+
+    .aboutSalary .chatFunction .footer h2 {
+        font-size: 22px;
+    }
+
+
+    .aboutSalary .chatFunction .footer h2 span {
+        font-size: 30px;
+    }
+
+    .aboutSalary .button-wrap {
+        margin-top: 70px;
+    }
+    .chatRooms {
+        padding: 50px 0 80px;
+    }
+
+    .chatRooms .single-content img {
+        width: 100%;
+    }
+
+    .chatRooms .single-content h5 {
+        font-size: 18px;
+    }
+    .faq {
+        padding: 80px 0;
+    }
+
+    .faq .single-faq a {
+        padding: 10px 15px;
+    }
     .application {
         padding: 80px 0;
     }
@@ -1419,7 +1327,137 @@ position: absolute;
 }
 
 @media (max-width:768px) {
+    header .navbar .left p {
+        display: none;
+    }
 
+    header .navbar {
+        padding: 0;
+    }
+    .banner {
+        padding-top: 68px;
+    }
+
+    .banner .banner-top p {
+        font-size: 4vw;
+    }
+
+    .banner .banner-top p span {
+        display: block;
+    }
+
+    .banner .banner-top h2 {
+        font-size: 6vw;
+    }
+
+    .banner .banner-top::after {
+        border-top: 15px solid #EF5A88;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+    }
+
+    .banner .banner-bottom {
+        background-image: url(../images/banner-bg-mobile.jpg);
+    }
+
+    .banner .banner-bottom img {
+        width: 550px;
+        max-width: 100%;
+        left: 0%;
+        margin: auto;
+        display: block;
+    }
+
+    .banner .banner-bottom {
+        padding-top: 47vw;
+    }
+
+    .banner .banner-bottom .number {
+        margin-top: 0;
+        padding: 5px;
+    }
+
+    .banner .banner-bottom .number p {
+        font-size: 16px;
+    }
+
+    .banner .banner-bottom .number p small {
+        font-size: 12px;
+    }
+
+    .banner .banner-bottom .number a {
+        font-size: 5.5vw;
+        line-height: 6vw;
+        display: block;
+    }
+
+    .banner .banner-bottom .number a img {
+        width: 5vw;
+    }
+
+    .banner .bubble .b2 {
+        top: -1%;
+    }
+
+    .banner .bubble .b3 {
+        left: 72.8%;
+        top: 15%;
+        width: 9%;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .button-wrap {
+        margin-top: 40px;
+    }
+
+    .button-wrap .button {
+        padding: 12px 20px;
+        font-size: 20px;
+    }
+
+    .title {
+        padding: 30px 0 20px;
+    }
+
+    .title h2 {
+        font-size: 30px;
+    }
+
+    .jobContent .title {
+        padding: 0px 0 50px;
+    }
+
+    .jobContent .title h2 {
+        font-size: 30px;
+    }
+    .aboutSalary .chatFunctions {
+        column-gap: 15px;
+        grid-template-columns: 100%;
+    }
+
+    .aboutSalary .chatFunction:first-child {
+        margin-bottom: 30px;
+    }
+
+    .aboutSalary .chatFunction .body p {
+        min-height: 150px;
+        margin-bottom: 30px;
+    }
+
+    .aboutSalary .button-wrap {
+        margin-top: 50px;
+    }
+    .chatRooms .single-content img {
+        margin-bottom: 30px;
+    }
     .application .line,
     .application .number {
         border: 2px solid #D9CFBE;
@@ -1475,7 +1513,10 @@ position: absolute;
         padding: 10px 20px;
         margin-right: 20px;
     }
-
+    .fixedLine{
+        top: calc( 28vw + 90px );
+        padding:0 0 10px;
+    }
 }
 
 @media (max-width:578px) {
@@ -1516,78 +1557,15 @@ position: absolute;
     }
 
 }
-label.error{
-    position: absolute;
-    width: 100%;
-    left: 15px;
-    top: 100%;
-    margin: 0;
-    color: #EA4545;
-}
 
-footer {
-    padding: 40px 20px;
-    background: #fff;
-}
+@media (max-width:500px) {
+    .banner .banner-bottom .number a {
+        font-size: 26px;
+        line-height: 26px;
+        display: block;
+    }
 
-footer p {
-    text-align: center;
-}
-
-
-.fixedLine{
-    background-color: #00B900;
-    width: 45px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    position: fixed;
-    top: 300px;
-    padding: 10px 0 20px;
-    z-index: 9999;
-}
-.fixedLine:hover{
-    text-decoration: none;
-}
-.fixedLine img{
-    width: 45px;
-}
-.fixedLine p{
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    text-decoration: none;
-}
-.goToTop{
-    width: 45px;
-    height: 45px;
-    background: rgba(0,0,0,.25);
-    border-radius: 50%;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    cursor: pointer;
-    transform: scale(.5);
-    z-index: 99999;
-    display: none;
-    transition: scale .3s ease;
-}
-.goToTop.active{
-    display: block;
-    transform: scale(1);
-}
-.goToTop:hover{
-    background: rgba(0,185,0,.25);
-    
-}
-.goToTop img{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-@media (max-width:768px) {
-    .fixedLine{
-        top: calc( 28vw + 90px );
-        padding:0 0 10px;
+    .banner .banner-bottom .number a img {
+        width: 24px;
     }
 }
